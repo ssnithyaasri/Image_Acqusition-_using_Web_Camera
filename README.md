@@ -38,20 +38,14 @@ End the program and close the output video window by pressing 'q'
 ## i) Write the frame as JPG file
 ```
 import cv2
-
 cap = cv2.VideoCapture(0) frame_number = 0 # Initialize frame number
-
 while frame_number < 5:
-
-ret, frame = cap.read()
-
-cv2.imshow('frame', frame)
+    ret, frame = cap.read()
+    cv2.imshow('frame', frame)
 
 # Save frame as JPG file cv2.imwrite(f"frame_{frame_number}.jpg", frame) frame_number += 1
-
-if cv2.waitKey(1) & 0xFF == ord('q'):
-
-break
+    if cv2.waitKey(1000) & 0xFF == ord('q'):
+    break
 
 cap.release()
 
@@ -83,13 +77,13 @@ import cv2
 cap = cv2.VideoCapture(0)
 # Create a resizable window
 cv2.namedWindow('Video', cv2.WINDOW_NORMAL)
-while True:
-ret, frame = cap.read()
-cv2.imshow('Video', frame)
+    while True:
+    ret, frame = cap.read()
+    cv2.imshow('Video', frame)
 # Resize the window
-cv2.resizeWindow('Video', 10, 200)
-if cv2.waitKey(1) & 0xFF == ord('q'):
-break
+    cv2.resizeWindow('Video', 10, 200)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+    break
 cap.release()
 cv2.destroyAllWindows()
 ```
@@ -100,13 +94,12 @@ cv2.destroyAllWindows()
 ```
 import cv2
 cap = cv2.VideoCapture (0) # Define the rotation angle (in degrees) rotation_angle = 90
-
-while True:
-ret, frame = cap.read()
+    while True:
+    ret, frame = cap.read()
 # Rotate the frame rotated_frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-cv2.imshow('Rotated Video', rotated_frame)
-if cv2.waitKey(1) & 0xFF == ord('q'):
-break
+    cv2.imshow('Rotated Video', rotated_frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+    break
 cap.release()
 cv2.destroyAllWindows()
 ```
