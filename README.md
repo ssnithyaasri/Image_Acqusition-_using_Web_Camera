@@ -43,7 +43,8 @@ while frame_number < 5:
     ret, frame = cap.read()
     cv2.imshow('frame', frame)
 
-# Save frame as JPG file cv2.imwrite(f"frame_{frame_number}.jpg", frame) frame_number += 1
+# Save frame as JPG file cv2.imwrite(f"frame_{frame_number}.jpg", frame)
+    frame_number += 1
     if cv2.waitKey(1000) & 0xFF == ord('q'):
     break
 
